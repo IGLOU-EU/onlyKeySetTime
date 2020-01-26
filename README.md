@@ -8,6 +8,24 @@ This udev rules are base on [official rules](https://raw.githubusercontent.com/t
 
 ## Installation
 
+**From releases** *Replace ARCH - regular udev and local/bin - need wget and to be root*
+```
+ARCH='amd64' # 386 amd64 arm arm64
+OS='linux'
+
+bin="onlykey-settime_${OS}_${ARCH}"
+rules="49-onlykey-settime.rules"
+binlink="https://git.iglou.eu/adrien/onlyKeySetTime/releases/download/v1.0.0/"
+tmp="$(mktemp -d)" && cd "$tmp"
+wget "${binlink}${bin}" && chmod +x "${bin}"
+wget "${binlink}${bin}.sha256"
+wget "${binlink}${rules}"
+sha256sum -c "${bin}.sha256" && { cp "${bin}" "/usr/local/bin/${bin%%_*}"; cp ${rules} /etc/udev/rules.d/; udevadm control --reload; }
+cd "/tmp" && rm -rf "${tmp}"
+echo "DONE !"
+```
+
+**From source code**
 ```
 git clone https://git.iglou.eu/adrien/onlyKeySetTime.git
 cd onlyKeySetTime
