@@ -40,8 +40,8 @@ KERNEL=="ttyACM*", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="60fc", MODE:="066
 # KERNEL=="ttyACM*", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="60fc", MODE:="0660", GROUP:="onlykey", RUN+="/usr/local/bin/onlykey-cli settime"
 #
 # DEVICE_IDS 0x16C0, 0x0486
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="60fc", MODE:="0660", GROUP:="onlykey", RUN+="/usr/local/bin/onlykey-settime -vid 16C0 -pid 0486"
-KERNEL=="ttyACM*", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="60fc", MODE:="0660", GROUP:="onlykey", RUN+="/usr/local/bin/onlykey-settime -vid 16C0 -pid 0486"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="16C0", ATTRS{idProduct}=="0486", MODE:="0660", GROUP:="onlykey", RUN+="/usr/local/bin/onlykey-settime -vid 16C0 -pid 0486"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="16C0", ATTRS{idProduct}=="0486", MODE:="0660", GROUP:="onlykey", RUN+="/usr/local/bin/onlykey-settime -vid 16C0 -pid 0486"
 #
 # DEVICE_IDS 0x1d50, 0x60fc
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="60fc", MODE:="0660", GROUP:="onlykey", RUN+="/usr/local/bin/onlykey-settime -vid 1d50 -pid 60fc"
