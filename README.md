@@ -43,6 +43,20 @@ cd onlyKeySetTime
 make build
 ```
 
+## Clean and Uninstall
+
+**For clean repos**
+
+```
+make clean
+```
+
+**For uninstall**
+
+```
+make remove
+```
+
 ## License
 
 MIT License, see [LICENSE.md](LICENSE.md).
